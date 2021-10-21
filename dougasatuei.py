@@ -34,7 +34,7 @@ def main():
             wh_pixels = cv2.countNonZero(th)
             
             if wh_pixels > 500:
-                date = datetime.now().strftime("%Y%m%d_%H%M%S)
+                date = datetime.now().strftime("%Y%m%d_%H%M%S")
                 print(date + "WhitePixels:"+str(wh_pixels))
                                       
                 fourcc = cv.2VideoEriter_fourcc('m', 'p', '4', 'v')
