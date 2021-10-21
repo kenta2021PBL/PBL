@@ -15,9 +15,9 @@ def main():
     size = (int(cam.get(cv2.CAP_PROP_FRAME_WIDTH)), int(cam.get(cv2.CAP_PROP_FRAME_HEIGHT)))
 
     while True:
-        ret, frame1 = cam.read()
-        ret, frame2 = cam.read()
-        ret, frame3 = cam.read()
+        ret1, frame1 = cam.read()
+        ret2, frame2 = cam.read()
+        ret3, frame3 = cam.read()
 
         if ret1 and ret2 and ret3:
             gray1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
