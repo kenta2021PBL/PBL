@@ -8,6 +8,7 @@ def main():
 
     cam = cv2.VideoCapture(-1)
 
+    # カメラデバイスが見つからない場合、終了
     if not cam.isOpened():
         return
 
@@ -20,6 +21,7 @@ def main():
         ret3, frame3 = cam.read()
 
         if ret1 and ret2 and ret3:
+            #グレースケールに変換
             gray1 = cv2.cvtColor(frame1, cv2.COLOR_BGR2GRAY)
             gray2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2GRAY)
             gray3 = cv2.cvtColor(frame3, cv2.COLOR_BGR2GRAY)
@@ -33,6 +35,7 @@ def main():
             
             wh_pixels = cv2.countNonZero(th)
             
+            #閾値を超えたら動画撮影
             if wh_pixels > 500:
                 date = datetime.now().strftime("%Y%m%d_%H%M%S")
                 print(date + "WhitePixels:"+str(wh_pixels))
